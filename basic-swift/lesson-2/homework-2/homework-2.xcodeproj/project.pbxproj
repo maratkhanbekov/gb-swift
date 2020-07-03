@@ -13,6 +13,7 @@
 		7991774224AD080500A2AE88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7991774124AD080500A2AE88 /* Assets.xcassets */; };
 		7991774524AD080500A2AE88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7991774424AD080500A2AE88 /* Preview Assets.xcassets */; };
 		7991774824AD080500A2AE88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7991774624AD080500A2AE88 /* LaunchScreen.storyboard */; };
+		7991775024AD193100A2AE88 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7991774F24AD193100A2AE88 /* Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7991774424AD080500A2AE88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7991774724AD080500A2AE88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7991774924AD080500A2AE88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7991774F24AD193100A2AE88 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Functions.swift; path = Functions/Functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				7991774624AD080500A2AE88 /* LaunchScreen.storyboard */,
 				7991774924AD080500A2AE88 /* Info.plist */,
 				7991774324AD080500A2AE88 /* Preview Content */,
+				7991774F24AD193100A2AE88 /* Functions.swift */,
 			);
 			path = "homework-2";
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				7991773C24AD07FF00A2AE88 /* AppDelegate.swift in Sources */,
 				7991773E24AD07FF00A2AE88 /* SceneDelegate.swift in Sources */,
 				7991774024AD07FF00A2AE88 /* ContentView.swift in Sources */,
+				7991775024AD193100A2AE88 /* Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
