@@ -3,12 +3,59 @@ import GameplayKit
 class GameScene: SKScene {
     
     // наша змея
-    var snake: Snake? 
+    var snake: Snake?
+    var apple: Apple?
+    var currentScore: Int?
+    var timeToCatchApple: Double? = 10
+    var timeLeftToCatch: Double?
+    var appleTimer: SKLabelNode?
     
     // вызывается при первом запуске сцены
     override func didMove(to view: SKView) {
+        
+        
+        configureStartView(for: view)
+        createLeftButton(for: view)
+        createRightButton(for: view)
+        createApple()
+        createSnake(for: view)
+        
+        // Делаем нашу сцену делегатом соприкосновений
+        self.physicsWorld.contactDelegate = self
+        
+       
+    }
+    
+    func createSnake(for view: SKView) {
+        // создаем змею по центру экрана и добавляем ее на сцену
+        snake = Snake(atPoint: CGPoint(x: view.scene!.frame.midX, y: view.scene!.frame.midY))
+        self.addChild(snake!)
+        
+        
+        
+        
+        // устанавливаем категорию взаимодействия с другими объектами
+        self.physicsBody?.categoryBitMask = CollisionCategories.EdgeBody
+        // устанавливаем категории, с которыми будут пересекаться края сцены
+        self.physicsBody?.collisionBitMask = CollisionCategories.Snake | CollisionCategories.SnakeHead
+    }
+    
+    
+    
+    func addAppleTimer() {
+        let appleTimer = SKLabelNode(fontNamed: "Futura")
+        appleTimer.text = "Яблоко исчезнет через \(Int(timeLeftToCatch!))"
+        appleTimer.fontSize = 20
+        appleTimer.position = CGPoint(x:self.frame.midX, y:self.frame.maxY - 20)
+        self.addChild(appleTimer)
+        self.appleTimer = appleTimer
+    }
+    
+    func configureStartView(for view: SKView) -> Void {
         // цвет фона сцены
-        backgroundColor = SKColor.black
+//        backgroundColor = SKColor.black
+        
+        
         // вектор и сила гравитации
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         // добавляем поддержку физики
@@ -17,6 +64,9 @@ class GameScene: SKScene {
         self.physicsBody?.allowsRotation = false
         // включаем отображение отладочной информации
         view.showsPhysics = true
+    }
+    
+    func createLeftButton(for view: SKView) -> Void {
         // поворот против часовой стрелки
         // создаем ноду(объект)
         let counterClockwiseButton = SKShapeNode()
@@ -34,6 +84,9 @@ class GameScene: SKScene {
         counterClockwiseButton.name = "counterClockwiseButton"
         // Добавляем на сцену
         self.addChild(counterClockwiseButton)
+    }
+    
+    func createRightButton(for view: SKView) -> Void {
         // Поворот по часовой стрелке
         let clockwiseButton = SKShapeNode()
         clockwiseButton.path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 45, height: 45)).cgPath
@@ -43,22 +96,6 @@ class GameScene: SKScene {
         clockwiseButton.lineWidth = 10
         clockwiseButton.name = "clockwiseButton"
         self.addChild(clockwiseButton)
-        
-        createApple()
-        
-        // создаем змею по центру экрана и добавляем ее на сцену
-        snake = Snake(atPoint: CGPoint(x: view.scene!.frame.midX, y: view.scene!.frame.midY))
-        self.addChild(snake!)
-        
-        // Делаем нашу сцену делегатом соприкосновений
-        self.physicsWorld.contactDelegate = self
-        
-        
-        // устанавливаем категорию взаимодействия с другими объектами
-        self.physicsBody?.categoryBitMask = CollisionCategories.EdgeBody
-        // устанавливаем категории, с которыми будут пересекаться края сцены
-        self.physicsBody?.collisionBitMask = CollisionCategories.Snake | CollisionCategories.SnakeHead
-        
     }
     
     
@@ -112,13 +149,43 @@ class GameScene: SKScene {
     
     // Создаем яблоко в случайной точке сцены
     func createApple(){
+        
+        self.timeLeftToCatch = self.timeToCatchApple
+        
         // Случайная точка на экране
         let randX  = CGFloat(arc4random_uniform(UInt32(view!.scene!.frame.maxX-5)) + 1)
         let randY  = CGFloat(arc4random_uniform(UInt32(view!.scene!.frame.maxY-5)) + 1)
         // Создаем яблоко
-        let apple = Apple(position: CGPoint(x: randX, y: randY))
+        apple = Apple(position: CGPoint(x: randX, y: randY))
         // Добавляем яблоко на сцену
-        self.addChild(apple)
+        self.addChild(apple!)
+        
+        self.countDown()
+        
+    }
+    
+    func countDown(){
+        
+        let wait:SKAction = SKAction.wait(forDuration: 1)
+        let finishTimer:SKAction = SKAction.run {
+            
+            
+            if self.timeLeftToCatch! > 0 {
+                self.timeLeftToCatch! -= 1
+                self.countDown()
+            }
+            else {
+                self.apple?.removeFromParent()
+                self.createApple()
+            }
+            self.appleTimer?.removeFromParent()
+            self.addAppleTimer()
+        }
+        
+        let seq:SKAction = SKAction.sequence([wait, finishTimer])
+        self.run(seq)
+        
+        
     }
     
     
@@ -135,6 +202,7 @@ extension GameScene: SKPhysicsContactDelegate {
         let collisionObject = bodyes ^ CollisionCategories.SnakeHead
         // проверяем, что это за второй объект
         switch collisionObject {
+            
         case CollisionCategories.Apple: // проверяем, что это яблоко
             // яблоко – это один из двух объектов, которые соприкоснулись. Используем тернарный оператор, чтобы вычислить, какой именно
             let apple = contact.bodyA.node is Apple ? contact.bodyA.node : contact.bodyB.node
@@ -144,22 +212,21 @@ extension GameScene: SKPhysicsContactDelegate {
             apple?.removeFromParent()
             // создаем новое яблоко
             createApple()
+            
+            
         case CollisionCategories.EdgeBody: // проверяем, что это стенка экрана
-         
-            if let apple = self.childNode(withName: "apple") as? SKSpriteNode {
-                apple.removeFromParent()
-            }
-        
             
-            if let snake = self.childNode(withName: "snake") as? SKSpriteNode {
-                snake.removeFromParent()
-            }
+            // Удаляем
+            self.apple?.removeFromParent()
+            self.snake?.removeFromParent()
             
-            // создаем новое яблоко
+            // Создаем новое яблоко
             createApple()
             
-            // создаем змею по центру экрана и добавляем ее на сцену
-            snake = Snake(atPoint: CGPoint(x: scene!.frame.midX, y: scene!.frame.midY))
+            // Создаем новую змейку
+            let randX  = CGFloat(arc4random_uniform(UInt32(view!.scene!.frame.maxX-5)) + 1)
+            let randY  = CGFloat(arc4random_uniform(UInt32(view!.scene!.frame.maxY-5)) + 1)
+            snake = Snake(atPoint: CGPoint(x: randX, y: randY))
             self.addChild(snake!)
             
         default:
