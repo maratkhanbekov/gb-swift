@@ -9,18 +9,57 @@
 import UIKit
 
 class LoginFormController: UIViewController {
-    
     @IBOutlet weak var loginInput: UITextField!
+    @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var buttonSignIn: UIButton!
     
-    @IBOutlet weak var loginTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
+    
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        // Проверяем данные
+        let checkResult = checkUserData()
+        
+        // Если данные не верны, покажем ошибку
+        if !checkResult {
+            showLoginError()
+        }
+        
+        // Вернем результат
+        return checkResult
+    }
+    
+    func checkUserData() -> Bool {
+        guard let login = loginInput.text,
+            let password = passwordInput.text else { return false }
+        
+        if login == "admin" && password == "123456" {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func showLoginError() {
+        // Создаем контроллер
+        let alter = UIAlertController(title: "Ошибка", message: "Введены не верные данные пользователя", preferredStyle: .alert)
+        // Создаем кнопку для UIAlertController
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        // Добавляем кнопку на UIAlertController
+        alter.addAction(action)
+        // Показываем UIAlertController
+        present(alter, animated: true, completion: nil)
+    }
+    
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        buttonSignIn.layer.cornerRadius = 10
         
         // Жест нажатия
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -42,7 +81,7 @@ class LoginFormController: UIViewController {
         scrollView?.scrollIndicatorInsets = contentInsets
         
         UIView.animate(withDuration: 1) {
-            self.loginTopConstraint.constant = 20
+            
             self.logoTopConstraint.constant = 20
             self.view.layoutIfNeeded()
         }
@@ -55,8 +94,8 @@ class LoginFormController: UIViewController {
         scrollView?.contentInset = contentInsets
         
         UIView.animate(withDuration: 1) {
-            self.loginTopConstraint.constant = 65
-            self.logoTopConstraint.constant = 68
+            
+            self.logoTopConstraint.constant = 80
             self.view.layoutIfNeeded()
         }
     }
@@ -76,17 +115,6 @@ class LoginFormController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        // Получаем текст логина
-        let login = loginInput.text!
-        // Получаем текст-пароль
-        let password = passwordInput.text!
-        
-        // Проверяем, верны ли они
-        if login == "admin" && password == "123456" {
-            print("успешная авторизация")
-        } else {
-            print("неуспешная авторизация")
-        }
         
     }
     
