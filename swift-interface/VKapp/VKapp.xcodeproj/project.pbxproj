@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7947CA4224D595C300080301 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7947CA4124D595C300080301 /* DetailsViewController.swift */; };
+		79542B2924DC2B8F00A3B213 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79542B2824DC2B8F00A3B213 /* FriendsTableViewCell.swift */; };
+		79542B2B24DC2CA200A3B213 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79542B2A24DC2CA200A3B213 /* Friend.swift */; };
+		79542B2F24DC2E9600A3B213 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79542B2E24DC2E9600A3B213 /* FriendsViewController.swift */; };
+		79542B3424DC320000A3B213 /* FriendsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79542B3324DC320000A3B213 /* FriendsCollectionViewController.swift */; };
+		79542B3824DC366600A3B213 /* FriendsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79542B3724DC366600A3B213 /* FriendsCollectionViewCell.swift */; };
+		79542B3B24DC8AC000A3B213 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79542B3A24DC8AC000A3B213 /* Group.swift */; };
+		79542B4024DC8D2400A3B213 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79542B3F24DC8D2400A3B213 /* GroupsViewController.swift */; };
+		79542B4224DC8D4300A3B213 /* GroupCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79542B4124DC8D4300A3B213 /* GroupCollectionViewController.swift */; };
+		79542B4424DC8DE600A3B213 /* GroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79542B4324DC8DE600A3B213 /* GroupCollectionViewCell.swift */; };
+		79542B4624DC8E0200A3B213 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79542B4524DC8E0200A3B213 /* GroupTableViewCell.swift */; };
 		79B9DA3024D202F100770A53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9DA2F24D202F100770A53 /* AppDelegate.swift */; };
 		79B9DA3224D202F100770A53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9DA3124D202F100770A53 /* SceneDelegate.swift */; };
 		79B9DA3724D202F100770A53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79B9DA3524D202F100770A53 /* Main.storyboard */; };
@@ -15,11 +24,19 @@
 		79B9DA3C24D202FB00770A53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79B9DA3A24D202FB00770A53 /* LaunchScreen.storyboard */; };
 		79B9DA4424D2035E00770A53 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9DA4324D2035E00770A53 /* LoginFormController.swift */; };
 		79C3C63024D5BF3800FBE56B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C3C62F24D5BF3800FBE56B /* TabBarViewController.swift */; };
-		79C3C63424D5D85A00FBE56B /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C3C63324D5D85900FBE56B /* FriendsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7947CA4124D595C300080301 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		79542B2824DC2B8F00A3B213 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		79542B2A24DC2CA200A3B213 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		79542B2E24DC2E9600A3B213 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		79542B3324DC320000A3B213 /* FriendsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewController.swift; sourceTree = "<group>"; };
+		79542B3724DC366600A3B213 /* FriendsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewCell.swift; sourceTree = "<group>"; };
+		79542B3A24DC8AC000A3B213 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		79542B3F24DC8D2400A3B213 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		79542B4124DC8D4300A3B213 /* GroupCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewController.swift; sourceTree = "<group>"; };
+		79542B4324DC8DE600A3B213 /* GroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewCell.swift; sourceTree = "<group>"; };
+		79542B4524DC8E0200A3B213 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		79B9DA2C24D202F100770A53 /* VKapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79B9DA2F24D202F100770A53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79B9DA3124D202F100770A53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +46,6 @@
 		79B9DA3D24D202FB00770A53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79B9DA4324D2035E00770A53 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 		79C3C62F24D5BF3800FBE56B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		79C3C63324D5D85900FBE56B /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +59,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79542B3924DC8AAF00A3B213 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				79542B2A24DC2CA200A3B213 /* Friend.swift */,
+				79542B3A24DC8AC000A3B213 /* Group.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		79542B3C24DC8BAE00A3B213 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79542B2824DC2B8F00A3B213 /* FriendsTableViewCell.swift */,
+				79542B3724DC366600A3B213 /* FriendsCollectionViewCell.swift */,
+				79542B4524DC8E0200A3B213 /* GroupTableViewCell.swift */,
+				79542B4324DC8DE600A3B213 /* GroupCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		79542B3E24DC8CA800A3B213 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				79B9DA4324D2035E00770A53 /* LoginFormController.swift */,
+				79C3C62F24D5BF3800FBE56B /* TabBarViewController.swift */,
+				79542B2E24DC2E9600A3B213 /* FriendsViewController.swift */,
+				79542B3324DC320000A3B213 /* FriendsCollectionViewController.swift */,
+				79542B3F24DC8D2400A3B213 /* GroupsViewController.swift */,
+				79542B4124DC8D4300A3B213 /* GroupCollectionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		79B9DA2324D202F100770A53 = {
 			isa = PBXGroup;
 			children = (
@@ -62,16 +111,15 @@
 		79B9DA2E24D202F100770A53 /* VKapp */ = {
 			isa = PBXGroup;
 			children = (
-				79B9DA4324D2035E00770A53 /* LoginFormController.swift */,
-				79C3C62F24D5BF3800FBE56B /* TabBarViewController.swift */,
+				79542B3924DC8AAF00A3B213 /* Model */,
+				79542B3C24DC8BAE00A3B213 /* View */,
+				79542B3E24DC8CA800A3B213 /* Controller */,
 				79B9DA2F24D202F100770A53 /* AppDelegate.swift */,
 				79B9DA3124D202F100770A53 /* SceneDelegate.swift */,
 				79B9DA3524D202F100770A53 /* Main.storyboard */,
-				7947CA4124D595C300080301 /* DetailsViewController.swift */,
 				79B9DA3824D202FB00770A53 /* Assets.xcassets */,
 				79B9DA3A24D202FB00770A53 /* LaunchScreen.storyboard */,
 				79B9DA3D24D202FB00770A53 /* Info.plist */,
-				79C3C63324D5D85900FBE56B /* FriendsViewController.swift */,
 			);
 			path = VKapp;
 			sourceTree = "<group>";
@@ -148,11 +196,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				79B9DA4424D2035E00770A53 /* LoginFormController.swift in Sources */,
+				79542B2F24DC2E9600A3B213 /* FriendsViewController.swift in Sources */,
+				79542B3824DC366600A3B213 /* FriendsCollectionViewCell.swift in Sources */,
 				79B9DA3024D202F100770A53 /* AppDelegate.swift in Sources */,
 				79B9DA3224D202F100770A53 /* SceneDelegate.swift in Sources */,
+				79542B4024DC8D2400A3B213 /* GroupsViewController.swift in Sources */,
+				79542B4224DC8D4300A3B213 /* GroupCollectionViewController.swift in Sources */,
+				79542B2924DC2B8F00A3B213 /* FriendsTableViewCell.swift in Sources */,
 				79C3C63024D5BF3800FBE56B /* TabBarViewController.swift in Sources */,
-				79C3C63424D5D85A00FBE56B /* FriendsViewController.swift in Sources */,
-				7947CA4224D595C300080301 /* DetailsViewController.swift in Sources */,
+				79542B3424DC320000A3B213 /* FriendsCollectionViewController.swift in Sources */,
+				79542B2B24DC2CA200A3B213 /* Friend.swift in Sources */,
+				79542B4424DC8DE600A3B213 /* GroupCollectionViewCell.swift in Sources */,
+				79542B3B24DC8AC000A3B213 /* Group.swift in Sources */,
+				79542B4624DC8E0200A3B213 /* GroupTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
