@@ -8,7 +8,7 @@ struct Group {
 }
 
 struct GroupList {
-    let groups = [
+    var groups = [
         Group(name: "Автомобили", image: "car", imgCollection: ["car"]),
         Group(name: "Музыка", image: "music", imgCollection: ["music"]),
         Group(name: "Природа", image: "nature", imgCollection: ["nature"])
@@ -21,4 +21,10 @@ struct GroupList {
     func numberOfGroups() -> Int {
         return groups.count
     }
+    
+    mutating func remove(at index: Int) {
+        groups.remove(at: index)
+    }
+    
+    
 }

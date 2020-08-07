@@ -7,6 +7,12 @@ class FriendsCollectionViewController: UICollectionViewController {
     var selectedFriend: Friend?
     var imgCollection: [String]?
     
+    private let itemsPerRow: CGFloat = 3
+    private let sectionInsets = UIEdgeInsets(top: 50.0,
+    left: 20.0,
+    bottom: 50.0,
+    right: 20.0)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,19 +36,20 @@ class FriendsCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FriendsCollectionViewCell
         cell.backgroundColor = indexPath.row % 2 == 0 ? .lightGray : .yellow
         
-        
-//        cell.myPicture.frame = CGRect(x: 0, y: 0, width: 70, height: 70)
         cell.myPicture.image = UIImage(named: imgCollection![indexPath.row])
 
     
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-
-        return CGSize(width: 300, height: 300)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+//          let availableWidth = view.frame.width - paddingSpace
+//          let widthPerItem = availableWidth / itemsPerRow
+//
+//       return CGSize(width: widthPerItem, height: widthPerItem)
+//    }
 
 
 }

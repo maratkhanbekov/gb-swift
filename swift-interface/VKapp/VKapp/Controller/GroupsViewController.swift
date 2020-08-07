@@ -4,7 +4,7 @@ import UIKit
 class GroupsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    let groupList = GroupList()
+    var groupList = GroupList()
     var myGroups: [Group] = []
     
     
@@ -43,4 +43,16 @@ extension GroupsViewController: UITableViewDelegate {
         vc.selectedGroup = selectedGroup
         self.show(vc, sender: nil)
     }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // Если была нажата кнопка «Удалить»
+        if editingStyle == .delete {
+        // Удаляем город из массива
+            groupList.remove(at: indexPath.row)
+        // И удаляем строку из таблицы
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+
 }
