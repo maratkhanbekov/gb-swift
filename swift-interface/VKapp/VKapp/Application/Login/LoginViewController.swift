@@ -8,38 +8,33 @@
 
 import UIKit
 
-class LoginFormController: UIViewController {
+class LoginViewController: UIViewController {
     @IBOutlet weak var loginInput: UITextField!
     @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var buttonSignIn: UIButton!
     
+    var data: VKData?
     
+    // Функция-проверка перед переходом на другой контроллер
+    //    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+    //        // Запрашиваем пользователя и получаем ответ
+    //        let result = checkUser()
+    //
+    //        // Показываем сообщение в случае ошибки
+    //        if !result {
+    //            showLoginError()
+    //        }
+    //
+    //        return result
+    //    }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        // Проверяем данные
-        let checkResult = checkUserData()
-        
-        // Если данные не верны, покажем ошибку
-        if !checkResult {
-            showLoginError()
-        }
-        
-        // Вернем результат
-        return checkResult
+    func checkUser() -> Bool {
+        guard let name = loginInput.text, let password = passwordInput.text, loginInput.text != "" else { return false }
+        return CurrentUser.sharedInstance.requestUser(by: name, with: password)
     }
     
-    func checkUserData() -> Bool {
-        guard let login = loginInput.text,
-            let password = passwordInput.text else { return false }
-        
-        if login == "admin" && password == "123456" {
-            return true
-        } else {
-            return false
-        }
-    }
     
     func showLoginError() {
         // Создаем контроллер
@@ -60,11 +55,14 @@ class LoginFormController: UIViewController {
         super.viewDidLoad()
         
         buttonSignIn.layer.cornerRadius = 10
+        loginInput.text = "Marat"
+        
         
         // Жест нажатия
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         // Присваиваем его UIScrollVIew
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
+        
         
     }
     
@@ -87,7 +85,7 @@ class LoginFormController: UIViewController {
         }
     }
     
-    //Когда клавиатура исчезает
+    // Когда клавиатура исчезает
     @objc func keyboardWillBeHidden(notification: Notification) {
         // Устанавливаем отступ внизу UIScrollView, равный 0
         let contentInsets = UIEdgeInsets.zero
@@ -116,12 +114,24 @@ class LoginFormController: UIViewController {
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
+        // Альтернативный способ перехода без segue
+        if checkUser() {
+            let TabBarVC = storyboard?.instantiateViewController(identifier: "TabBarViewController") as! TabBarViewController
+            
+            data = VKData()
+            
+            self.show(TabBarVC, sender: nil)
+            
+        }
+        else {
+            showLoginError()
+        }
+        
     }
     
     @objc func hideKeyboard() {
         self.scrollView?.endEditing(true)
     }
     
-    
-    
+    @IBAction func unwindToLogin(_ sender: UIStoryboardSegue) {}
 }

@@ -27,10 +27,10 @@ class FriendsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(for model: Friend) {
+    func configure(for model: User) {
         nameLabel.text = model.name
         ageLabel.text = "\(model.age)"
-        avatarImageView.image = UIImage.init(named: model.imageName)
+        avatarImageView.image = UIImage.init(named: model.avatar)
     }
 
 }

@@ -3,21 +3,22 @@ import UIKit
 private let reuseIdentifier = "FriendsCollectionViewCell"
 
 class FriendsCollectionViewController: UICollectionViewController {
+    
+    var data = VKData()
 
-    var selectedFriend: Friend?
-    var imgCollection: [String]?
+    var selectedFriend: User?
+    var posts: [Post]?
     
-    private let itemsPerRow: CGFloat = 3
-    private let sectionInsets = UIEdgeInsets(top: 50.0,
-    left: 20.0,
-    bottom: 50.0,
-    right: 20.0)
-    
+//    private let itemsPerRow: CGFloat = 3
+//    private let sectionInsets = UIEdgeInsets(top: 50.0,
+//    left: 20.0,
+//    bottom: 50.0,
+//    right: 20.0)
+//
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        imgCollection = selectedFriend?.imgCollection
+        posts = data.getUserPosts(by: selectedFriend!.id)
     }
 
   
@@ -29,14 +30,14 @@ class FriendsCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imgCollection?.count ?? 0
+        return posts?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FriendsCollectionViewCell
         cell.backgroundColor = indexPath.row % 2 == 0 ? .lightGray : .yellow
         
-        cell.myPicture.image = UIImage(named: imgCollection![indexPath.row])
+        cell.myPicture.image = UIImage(named: posts![indexPath.row].image)
 
     
         return cell

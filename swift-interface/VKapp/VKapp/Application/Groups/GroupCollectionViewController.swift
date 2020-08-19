@@ -10,7 +10,7 @@ class GroupCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imgCollection = selectedGroup?.imgCollection
+        imgCollection = selectedGroup?.images
     }
 
 
