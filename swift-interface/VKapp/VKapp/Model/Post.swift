@@ -13,4 +13,6 @@ struct Post {
     func isLikeByUser(user_id: Int) -> Bool {
         return liked_by_users.contains(user_id)
     }
+    
+    var images: [String]
 }

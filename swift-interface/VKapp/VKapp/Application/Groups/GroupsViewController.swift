@@ -4,8 +4,9 @@ import UIKit
 class GroupsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var data = VKData()
-//
+    var data = CurrentUser.sharedInstance
+    let user_id = CurrentUser.sharedInstance.user!.id
+    
 //    var groupList = GroupList()
 //    var myGroups: [Group] = []
 
@@ -20,11 +21,11 @@ class GroupsViewController: UIViewController {
 extension GroupsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.getAllGroups().count
+        return data.getUserGroups(user_id: user_id).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let group = data.getGroup(by: indexPath.row)
+        let group = data.getUserGroups(user_id: user_id)[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupTableViewCell
         
@@ -38,7 +39,7 @@ extension GroupsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let selectedGroup = data.getGroup(by: indexPath.row)
+        let selectedGroup = data.getUserPosts(by: user_id)[indexPath.row]
         
         let vc = storyboard?.instantiateViewController(identifier: "GroupCollectionViewController") as! GroupCollectionViewController
         
@@ -46,15 +47,18 @@ extension GroupsViewController: UITableViewDelegate {
         self.show(vc, sender: nil)
     }
     
-    
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        // Если была нажата кнопка «Удалить»
-//        if editingStyle == .delete {
-//        // Удаляем город из массива
-//            groupList.remove(at: indexPath.row)
-//        // И удаляем строку из таблицы
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        }
-//    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // Если была нажата кнопка «Удалить»
+        if editingStyle == .delete {
+            
+            
+            data.removeGroup(group_id: data.getUserGroups(user_id: user_id)[indexPath.row].id, user_id: user_id)
+            
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            
+        }
+    }
 
 }

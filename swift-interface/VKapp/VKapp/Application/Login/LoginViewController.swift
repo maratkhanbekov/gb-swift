@@ -15,8 +15,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var buttonSignIn: UIButton!
     
-    var data: VKData?
-    
     // Функция-проверка перед переходом на другой контроллер
     //    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
     //        // Запрашиваем пользователя и получаем ответ
@@ -54,6 +52,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         buttonSignIn.layer.cornerRadius = 10
         loginInput.text = "Marat"
         
@@ -62,7 +61,6 @@ class LoginViewController: UIViewController {
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         // Присваиваем его UIScrollVIew
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
-        
         
     }
     
@@ -117,8 +115,6 @@ class LoginViewController: UIViewController {
         // Альтернативный способ перехода без segue
         if checkUser() {
             let TabBarVC = storyboard?.instantiateViewController(identifier: "TabBarViewController") as! TabBarViewController
-            
-            data = VKData()
             
             self.show(TabBarVC, sender: nil)
             

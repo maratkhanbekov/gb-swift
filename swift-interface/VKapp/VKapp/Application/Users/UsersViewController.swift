@@ -9,9 +9,10 @@
 import UIKit
 
 class UsersViewController: UIViewController, UITableViewDataSource {
-    var data: VKData?
-    let currentUser = CurrentUser.sharedInstance.user!
+    var data = CurrentUser.sharedInstance
+    let user_id = CurrentUser.sharedInstance.user!.id
     var nonFriends = [User]()
+    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,19 +20,24 @@ class UsersViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         
-        let users = data!.getAllUsers()
+        
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let users = data.getAllUsers()
         
         for user in users {
-            if currentUser.friends.contains(user.id) {
+            if data.getUserFriends(by: user_id).contains(user) {
                 continue
             }
             else {
                 nonFriends.append(user)
             }
         }
-        
-        tableView.delegate = self
-        tableView.dataSource = self
         tableView.reloadData()
     }
     
@@ -47,12 +53,15 @@ class UsersViewController: UIViewController, UITableViewDataSource {
         cell.configure(for: user)
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedUser = nonFriends[indexPath.row]
-    
-        data!.addFriend(friend_id: selectedUser.id, user_id: currentUser.id)
-        tableView.reloadData()
+        
+        data.addFriend(friend_id: selectedUser.id, user_id: user_id)
+//        DispatchQueue.global(qos: .userInitiated).async {
+//            DispatchQueue.main.async {
+                self.tableView.reloadData()
+//            }
+//        }
         
     }
 }

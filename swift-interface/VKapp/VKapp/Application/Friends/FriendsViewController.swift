@@ -5,7 +5,7 @@ class FriendsViewController: UIViewController {
     
     // Сразу задаем исходный id
     var user_id = CurrentUser.sharedInstance.user!.id
-    var data = VKData()
+    var data = CurrentUser.sharedInstance
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,10 +17,18 @@ class FriendsViewController: UIViewController {
         tableView.delegate = self
         
         
+        
+        
+        
         // Подписываемся на поток из NotificationCenter
         NotificationCenter.default.addObserver(self, selector: #selector(getUserUpdate), name: NSNotification.Name(rawValue: userModelDidUpdateNotification), object: nil)
         tableView.reloadData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+           tableView.reloadData()
+       }
+       
     
     @IBAction func buttonUsersPressed(_ sender: UIButton) {
         
@@ -45,7 +53,6 @@ class FriendsViewController: UIViewController {
     @IBAction func buttonAddFriendPressed(_ sender: UIButton) {
         
         let UsersScreen = storyboard?.instantiateViewController(identifier: "UsersViewController") as! UsersViewController
-        UsersScreen.data = data
         self.show(UsersScreen, sender: nil)
         
     }
@@ -57,6 +64,7 @@ extension FriendsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.getUserFriends(by: user_id).count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -90,14 +98,21 @@ extension FriendsViewController: UITableViewDelegate {
         // Если была нажата кнопка «Удалить»
         if editingStyle == .delete {
             
+            
             data.removeFriend(friend_id: data.getUserFriends(by: user_id)[indexPath.row].id, user_id: user_id)
             
             tableView.deleteRows(at: [indexPath], with: .fade)
             
+            
         }
     }
     
-    @IBAction func unwindToFriends(_ sender: UIStoryboardSegue) {}
+    @IBAction func unwindToFriends(_ sender: UIStoryboardSegue) {
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
-
-extension FriendsViewController: DataModelDelegate {}
