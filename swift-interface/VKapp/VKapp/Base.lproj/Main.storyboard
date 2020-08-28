@@ -562,6 +562,7 @@
                                 </constraints>
                                 <size key="customSize" width="300" height="300"/>
                                 <connections>
+                                    <outlet property="counterLabel" destination="CsT-m7-mgV" id="wkQ-o0-xia"/>
                                     <outlet property="myPicture" destination="veY-y8-HQp" id="Dn2-JE-bus"/>
                                 </connections>
                             </collectionViewCell>

@@ -38,6 +38,8 @@ class FriendsCollectionViewController: UICollectionViewController {
         cell.backgroundColor = indexPath.row % 2 == 0 ? .lightGray : .yellow
         
         cell.myPicture.image = UIImage(named: data.getUserPosts(by: selectedFriend!.id)[indexPath.row].image)
+        
+        cell.postId = data.getUserPosts(by: selectedFriend!.id)[indexPath.row].id
 
     
         return cell

@@ -9,6 +9,8 @@
 import UIKit
 
 class FriendsTableViewCell: UITableViewCell {
+    
+    
 
     @IBOutlet weak var avatarImageView: UIImageView!
     

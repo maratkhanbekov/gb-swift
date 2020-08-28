@@ -9,6 +9,11 @@
 import UIKit
 
 class FriendsCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var counterLabel: LikeButton!
+    
+    
+    var postId: Int?
+    
     @IBOutlet weak var myPicture: UIImageView!
     
     
@@ -25,6 +30,7 @@ class FriendsCollectionViewCell: UICollectionViewCell {
     
     
     func setupView() {
+    
 //        let likeButton = LikeButton()
 //        likeButton.translatesAutoresizingMaskIntoConstraints = false
 //        likeButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
