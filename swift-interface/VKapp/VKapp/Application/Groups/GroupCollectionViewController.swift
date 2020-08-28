@@ -5,12 +5,12 @@ private let reuseIdentifier = "GroupCollectionViewCell"
 
 class GroupCollectionViewController: UICollectionViewController {
     
-    var selectedGroup: Group?
+    var selectedGroup: Post?
     var imgCollection: [String]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imgCollection = selectedGroup?.imgCollection
+        imgCollection = selectedGroup?.images
     }
 
 

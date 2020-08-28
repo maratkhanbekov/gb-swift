@@ -27,7 +27,7 @@ class GroupTableViewCell: UITableViewCell {
     
     func configure(for model: Group) {
         groupNameLabel.text = model.name
-        groupImageView.image = UIImage.init(named: model.image)
+        groupImageView.image = UIImage.init(named: model.avatar)
     }
 
 }
