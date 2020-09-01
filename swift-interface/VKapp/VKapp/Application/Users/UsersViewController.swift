@@ -57,11 +57,11 @@ class UsersViewController: UIViewController, UITableViewDataSource {
         let selectedUser = nonFriends[indexPath.row]
         
         data.addFriend(friend_id: selectedUser.id, user_id: user_id)
-//        DispatchQueue.global(qos: .userInitiated).async {
-//            DispatchQueue.main.async {
+        DispatchQueue.global(qos: .userInitiated).async {
+            DispatchQueue.main.async {
                 self.tableView.reloadData()
-//            }
-//        }
+            }
+        }
         
     }
 }
