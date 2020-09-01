@@ -32,6 +32,9 @@
 		79B9DA3C24D202FB00770A53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79B9DA3A24D202FB00770A53 /* LaunchScreen.storyboard */; };
 		79B9DA4424D2035E00770A53 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9DA4324D2035E00770A53 /* LoginViewController.swift */; };
 		79C3C63024D5BF3800FBE56B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C3C62F24D5BF3800FBE56B /* TabBarViewController.swift */; };
+		79CEC95924FE59BB00889DDA /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CEC95824FE59BB00889DDA /* NewsViewController.swift */; };
+		79CEC95C24FE5A3200889DDA /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CEC95A24FE5A3200889DDA /* NewsTableViewCell.swift */; };
+		79CEC95D24FE5A3200889DDA /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79CEC95B24FE5A3200889DDA /* NewsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		79B9DA3D24D202FB00770A53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79B9DA4324D2035E00770A53 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		79C3C62F24D5BF3800FBE56B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		79CEC95824FE59BB00889DDA /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		79CEC95A24FE5A3200889DDA /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		79CEC95B24FE5A3200889DDA /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 		7943F2FA24E47F1C00649763 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				79CEC95724FE598800889DDA /* News */,
 				7979A4C124EAF72600E05743 /* Profile */,
 				7943F30024E92F1900649763 /* Users */,
 				7943F2FE24E4806C00649763 /* Login */,
@@ -204,6 +211,16 @@
 			path = VKapp;
 			sourceTree = "<group>";
 		};
+		79CEC95724FE598800889DDA /* News */ = {
+			isa = PBXGroup;
+			children = (
+				79CEC95824FE59BB00889DDA /* NewsViewController.swift */,
+				79CEC95A24FE5A3200889DDA /* NewsTableViewCell.swift */,
+				79CEC95B24FE5A3200889DDA /* NewsTableViewCell.xib */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -264,6 +281,7 @@
 			files = (
 				79B9DA3C24D202FB00770A53 /* LaunchScreen.storyboard in Resources */,
 				79B9DA3924D202FB00770A53 /* Assets.xcassets in Resources */,
+				79CEC95D24FE5A3200889DDA /* NewsTableViewCell.xib in Resources */,
 				79B9DA3724D202F100770A53 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +295,8 @@
 			files = (
 				79B9DA4424D2035E00770A53 /* LoginViewController.swift in Sources */,
 				7979A4C624EC15DD00E05743 /* Array.swift in Sources */,
+				79CEC95C24FE5A3200889DDA /* NewsTableViewCell.swift in Sources */,
+				79CEC95924FE59BB00889DDA /* NewsViewController.swift in Sources */,
 				79542B2F24DC2E9600A3B213 /* FriendsViewController.swift in Sources */,
 				79542B3824DC366600A3B213 /* FriendsCollectionViewCell.swift in Sources */,
 				79B9DA3024D202F100770A53 /* AppDelegate.swift in Sources */,

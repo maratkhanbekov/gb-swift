@@ -164,5 +164,69 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B10773B3-1E36-432A-9A94-627ACF533ACB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VKapp/Application/Friends/FriendsCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "init(frame:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B10773B3-1E36-432A-9A94-627ACF533ACB - d7ce4fdd1655a668"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VKapp.FriendsCollectionViewCell.__allocating_init(frame: __C.CGRect) -&gt; VKapp.FriendsCollectionViewCell"
+                  moduleName = "VKapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marat/Documents/GeekBrains/gb-swift/swift-interface/VKapp/VKapp/Application/Friends/FriendsCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "8">
+               </Location>
+               <Location
+                  uuid = "B10773B3-1E36-432A-9A94-627ACF533ACB - 7929bc6bb86f4e5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VKapp.FriendsCollectionViewCell.init(frame: __C.CGRect) -&gt; VKapp.FriendsCollectionViewCell"
+                  moduleName = "VKapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marat/Documents/GeekBrains/gb-swift/swift-interface/VKapp/VKapp/Application/Friends/FriendsCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "167">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6D269DB4-9ADC-43D2-BCDC-E07BC0391EC5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VKapp/Application/News/NewsTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "NewsTableViewCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
