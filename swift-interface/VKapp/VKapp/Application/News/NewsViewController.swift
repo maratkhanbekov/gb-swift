@@ -36,9 +36,9 @@ extension NewsViewController: UITableViewDataSource {
         return newsCell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 800.0
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 800.0
+//    }
     
     
 }
