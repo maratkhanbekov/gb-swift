@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A6t-0B-S7R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,21 +7,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Launch View Controller-->
-        <scene sceneID="C19-MQ-NC6">
-            <objects>
-                <viewController id="A6t-0B-S7R" customClass="LaunchViewController" customModule="VKapp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vhB-Al-sYA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="OPZ-DN-bdU"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Fe-tf-Yr7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1534.7826086956522" y="147.55434782608697"/>
-        </scene>
         <!--LoginViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -136,15 +121,17 @@
                     <connections>
                         <outlet property="buttonSignIn" destination="plJ-NI-B17" id="8w1-Hd-Fgs"/>
                         <outlet property="loginInput" destination="11g-Mw-ILk" id="KiE-Qy-cJ1"/>
+                        <outlet property="loginLabel" destination="QHM-30-Cpy" id="2rT-er-RZe"/>
                         <outlet property="logoImage" destination="jon-eV-fB4" id="yxA-Yi-B6e"/>
                         <outlet property="logoTopConstraint" destination="ufi-fA-jWG" id="mhN-vp-OzW"/>
                         <outlet property="passwordInput" destination="GpM-mB-tPa" id="3Zq-yp-YCR"/>
+                        <outlet property="passwordLabel" destination="zpK-PM-CCw" id="TTy-GM-l1a"/>
                         <outlet property="scrollView" destination="MZe-A8-s7f" id="qag-XA-71Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2413" y="161"/>
+            <point key="canvasLocation" x="2414" y="51"/>
         </scene>
         <!--TabBarViewController-->
         <scene sceneID="LLn-9L-jyh">
@@ -508,6 +495,13 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Rl-0c-xhw">
+                                                    <rect key="frame" x="20" y="21" width="80" height="79"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="buttonAvatarImage:" destination="pIi-XD-YGa" eventType="touchUpInside" id="Taw-be-ZdN"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -549,6 +543,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4Y-bv-jU2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4718.840579710145" y="160.59782608695653"/>
+        </scene>
+        <!--Friends Gallery View Controller-->
+        <scene sceneID="Qda-cV-vZb">
+            <objects>
+                <viewController storyboardIdentifier="FriendsGalleryViewController" id="8eC-4z-sga" customClass="FriendsGalleryViewController" customModule="VKapp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EO6-SZ-JpK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ymL-Al-9Hi"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hEt-r7-UhL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5503" y="1164"/>
+        </scene>
+        <!--Friends Scroll View Controller-->
+        <scene sceneID="NAo-Q9-c8h">
+            <objects>
+                <viewController id="auT-rT-Y9W" customClass="FriendsScrollViewController" customModule="VKapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n19-EZ-gpd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Kyf-af-kGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="15Q-Z8-aAK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5498" y="1837"/>
         </scene>
         <!--FriendsCollection-->
         <scene sceneID="1gG-1N-UzZ">

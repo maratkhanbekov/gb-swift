@@ -141,10 +141,12 @@ extension FriendsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+
+        
         let selectedFriend = data.getUserFriends(by: user_id)[indexPath.row]
         
-        let vc = storyboard?.instantiateViewController(identifier: "FriendsCollectionViewController") as! FriendsCollectionViewController
-        vc.selectedFriend = selectedFriend
+        let vc = storyboard?.instantiateViewController(identifier: "FriendsGalleryViewController") as! FriendsGalleryViewController
+//        vc.selectedFriend = selectedFriend
         self.show(vc, sender: nil)
     }
     
