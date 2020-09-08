@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var buttonSignIn: UIButton!
+    @IBOutlet weak var logoImage: UIImageView!
     
     // Функция-проверка перед переходом на другой контроллер
     //    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -61,6 +62,10 @@ class LoginViewController: UIViewController {
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         // Присваиваем его UIScrollVIew
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
+        
+        animateTitlesAppearing()
+        animateImageAppearing()
+        animatebuttonSignInAppearing()
         
     }
     
@@ -128,6 +133,59 @@ class LoginViewController: UIViewController {
     @objc func hideKeyboard() {
         self.scrollView?.endEditing(true)
     }
+    
+    
+    // Ф-я анимации полей
+    func animateTitlesAppearing() {
+        let offset = view.bounds.width
+        loginInput.transform = CGAffineTransform(translationX: -offset, y: 0)
+        passwordInput.transform = CGAffineTransform(translationX: offset, y: 0)
+        
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0,
+                       options: .curveEaseInOut,
+                       animations: {
+                        self.loginInput.transform = .identity
+                        self.passwordInput.transform = .identity
+        },
+                       completion: nil)
+        
+    }
+    
+    func animateImageAppearing() {
+        let offset = view.bounds.height
+        
+        logoImage.transform = CGAffineTransform(translationX: 0, y: -offset)
+        
+        UIView.animate(withDuration: 2,
+                       delay: 0,
+                       usingSpringWithDamping: 0.7,
+                       initialSpringVelocity: 0.3,
+                       options: .curveEaseInOut,
+                       animations: {
+            self.logoImage.transform = .identity
+        }, completion: nil)
+        
+        
+    }
+    
+    func animatebuttonSignInAppearing() {
+        let animation = CASpringAnimation(keyPath: "transform.scale")
+        
+        animation.fromValue = 0
+        animation.toValue = 1
+        animation.stiffness = 200
+        animation.mass = 2
+        animation.duration = 2
+        animation.beginTime = CACurrentMediaTime() + 1
+        animation.fillMode = CAMediaTimingFillMode.backwards
+        
+        self.buttonSignIn.layer.add(animation, forKey: nil)
+    }
+    
+    
     
     @IBAction func unwindToLogin(_ sender: UIStoryboardSegue) {}
 }

@@ -6,8 +6,8 @@ class FriendsCollectionViewController: UICollectionViewController {
     
     var data = CurrentUser.sharedInstance
     var selectedFriend: User?
-    let user_id = CurrentUser.sharedInstance.user!.id
-//    let user_id = 1
+//    let user_id = CurrentUser.sharedInstance.user!.id
+    let user_id = 1
 
 //    private let itemsPerRow: CGFloat = 3
 //    private let sectionInsets = UIEdgeInsets(top: 50.0,
@@ -19,6 +19,7 @@ class FriendsCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedFriend = data.getUser(by: 1)
+        
     }
 
   

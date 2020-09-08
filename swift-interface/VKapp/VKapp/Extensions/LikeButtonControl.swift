@@ -33,20 +33,39 @@ class LikeButton: UIButton {
     }
     
     @objc func buttonPressed() {
-        activateButton(bool: !isOn)
+        animateLikeButton()
     }
     
-    func activateButton(bool: Bool) {
+    func activateButton() {
         
-        isOn = bool
         
-        let color = bool ? Colors.twitterBlue : .clear
+        
+        isOn = isOn == true ? false : true
+        
+        let color = isOn == true ? Colors.twitterBlue : .clear
 //        let titleColor = bool ? .white : Colors.twitterBlue
-        let icon = bool ? "heart" : "heart.fill"
-        let likes = bool ? "" : "1"
+        let icon = isOn == true ? "heart.fill" : "heart"
+        let likes = isOn == true ? "1" : ""
         setTitle(likes, for: .normal)
         
 //        setTitleColor(titleColor, for: .normal)
         setImage(UIImage(systemName: icon), for: .normal)
+         
+    }
+    
+    func animateLikeButton() {
+        UIView.animate(withDuration: 0.2,
+                               delay: 0,
+                               usingSpringWithDamping: 0.8,
+                               initialSpringVelocity: 0.3,
+                               options: [.curveEaseInOut, .autoreverse],
+                               animations: {
+                                self.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                },
+                               completion: { _ in
+                                self.transform = CGAffineTransform(scaleX: 1, y: 1)
+                                self.activateButton()
+         }
+        )
     }
 }
