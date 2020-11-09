@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79402C3D2505464900FEC895 /* FriendsGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79402C3C2505464900FEC895 /* FriendsGalleryViewController.swift */; };
+		79402C3F2506B10B00FEC895 /* FriendsScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79402C3E2506B10B00FEC895 /* FriendsScrollViewController.swift */; };
 		7943F2F724E26D8200649763 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7943F2F624E26D8200649763 /* API.swift */; };
 		7943F2F924E477A900649763 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7943F2F824E477A900649763 /* Post.swift */; };
 		7943F30224E92F4400649763 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7943F30124E92F4300649763 /* UsersViewController.swift */; };
@@ -23,7 +25,6 @@
 		79542B4824DDBED200A3B213 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79542B4724DDBED000A3B213 /* User.swift */; };
 		7979A4C324EAF74300E05743 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7979A4C224EAF74200E05743 /* ProfileViewController.swift */; };
 		7979A4C624EC15DD00E05743 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7979A4C524EC15DD00E05743 /* Array.swift */; };
-		7999941125025F4300427CF8 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7999941025025F4300427CF8 /* LaunchViewController.swift */; };
 		79A4A96024F18A9300D4BEAA /* LikeButtonControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A4A95F24F18A9300D4BEAA /* LikeButtonControl.swift */; };
 		79A4C42124EFE43A008F577F /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A4C42024EFE43A008F577F /* DesignableView.swift */; };
 		79B9DA3024D202F100770A53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9DA2F24D202F100770A53 /* AppDelegate.swift */; };
@@ -39,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		79402C3C2505464900FEC895 /* FriendsGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsGalleryViewController.swift; sourceTree = "<group>"; };
+		79402C3E2506B10B00FEC895 /* FriendsScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsScrollViewController.swift; sourceTree = "<group>"; };
 		7943F2F624E26D8200649763 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		7943F2F824E477A900649763 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		7943F30124E92F4300649763 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +58,6 @@
 		79542B4724DDBED000A3B213 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7979A4C224EAF74200E05743 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7979A4C524EC15DD00E05743 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		7999941025025F4300427CF8 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		79A4A95F24F18A9300D4BEAA /* LikeButtonControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButtonControl.swift; sourceTree = "<group>"; };
 		79A4C42024EFE43A008F577F /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		79B9DA2C24D202F100770A53 /* VKapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +88,6 @@
 		7943F2FA24E47F1C00649763 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				7999940D250257B000427CF8 /* Launch */,
 				79CEC95724FE598800889DDA /* News */,
 				7979A4C124EAF72600E05743 /* Profile */,
 				7943F30024E92F1900649763 /* Users */,
@@ -114,6 +115,8 @@
 				79542B2E24DC2E9600A3B213 /* FriendsViewController.swift */,
 				79542B3724DC366600A3B213 /* FriendsCollectionViewCell.swift */,
 				79542B3324DC320000A3B213 /* FriendsCollectionViewController.swift */,
+				79402C3C2505464900FEC895 /* FriendsGalleryViewController.swift */,
+				79402C3E2506B10B00FEC895 /* FriendsScrollViewController.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -181,14 +184,6 @@
 				79A4A95F24F18A9300D4BEAA /* LikeButtonControl.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		7999940D250257B000427CF8 /* Launch */ = {
-			isa = PBXGroup;
-			children = (
-				7999941025025F4300427CF8 /* LaunchViewController.swift */,
-			);
-			path = Launch;
 			sourceTree = "<group>";
 		};
 		79B9DA2324D202F100770A53 = {
@@ -311,6 +306,7 @@
 				79542B2F24DC2E9600A3B213 /* FriendsViewController.swift in Sources */,
 				79542B3824DC366600A3B213 /* FriendsCollectionViewCell.swift in Sources */,
 				79B9DA3024D202F100770A53 /* AppDelegate.swift in Sources */,
+				79402C3F2506B10B00FEC895 /* FriendsScrollViewController.swift in Sources */,
 				7943F2F924E477A900649763 /* Post.swift in Sources */,
 				79B9DA3224D202F100770A53 /* SceneDelegate.swift in Sources */,
 				79542B4024DC8D2400A3B213 /* GroupsViewController.swift in Sources */,
@@ -320,7 +316,7 @@
 				79A4C42124EFE43A008F577F /* DesignableView.swift in Sources */,
 				79542B4824DDBED200A3B213 /* User.swift in Sources */,
 				79C3C63024D5BF3800FBE56B /* TabBarViewController.swift in Sources */,
-				7999941125025F4300427CF8 /* LaunchViewController.swift in Sources */,
+				79402C3D2505464900FEC895 /* FriendsGalleryViewController.swift in Sources */,
 				7943F30224E92F4400649763 /* UsersViewController.swift in Sources */,
 				79542B3424DC320000A3B213 /* FriendsCollectionViewController.swift in Sources */,
 				79542B4424DC8DE600A3B213 /* GroupCollectionViewCell.swift in Sources */,
